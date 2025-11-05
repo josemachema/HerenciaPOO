@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1.Polimorfimo
 {
-    internal class CalcularAreas
+    internal class CalcularAreas:ClaseAbstracta
     {
-        public double CalcularArea(double Lado)
+        public override double CalcularArea(double Lado)
         {
             return Lado * Lado;
 
