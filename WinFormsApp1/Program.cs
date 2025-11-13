@@ -1,5 +1,7 @@
+using WinFormsApp1.AsesoriaHerencia;
 using WinFormsApp1.ClaseAbstractaEjemploReal;
 using WinFormsApp1.Polimorfimo;
+using WinFormsApp1.PolimorfismoInterface;
 using WinFormsApp1.Problema1;
 using WinFormsApp1.ProblemaEdad;
 
@@ -16,7 +18,7 @@ namespace WinFormsApp1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormsAbstracto());
+            Application.Run(new FrmInterfaces());
         }
     }
 }

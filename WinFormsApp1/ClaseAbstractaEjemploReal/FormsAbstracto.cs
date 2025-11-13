@@ -34,6 +34,8 @@ calcular el costo total de mantenimiento.
     public partial class FormsAbstracto : Form
     {
         List<Auto> autos = new List<Auto>();
+        List<Moto> motos = new List<Moto>();
+
         public FormsAbstracto()
         {
             InitializeComponent();
@@ -51,6 +53,19 @@ calcular el costo total de mantenimiento.
                 if (comboBox1.Text== auto.marca + " " + auto.modelo)
                 {
                     
+                    auto.km_recorridos = Convert.ToDouble(txtKmRecorridos.Text);
+                    lblCosto.Text = auto.calcular_costo_mantenimiento().ToString();
+                    lblMarca.Text = auto.marca;
+                    lblModelo.Text = auto.modelo;
+                    lblAnio.Text = auto.anio.ToString();
+                }
+            }
+                    //Clase        //Objeto
+            foreach (Moto auto in motos)
+            {
+                if (comboBox1.Text == auto.marca + " " + auto.modelo)
+                {
+
                     auto.km_recorridos = Convert.ToDouble(txtKmRecorridos.Text);
                     lblCosto.Text = auto.calcular_costo_mantenimiento().ToString();
                     lblMarca.Text = auto.marca;
@@ -81,9 +96,15 @@ calcular el costo total de mantenimiento.
             autos.Add(new Auto("toyota", "Cambry", 2005));
             autos.Add(new Auto("Honda", "Acord", 2000));
             autos.Add(new Auto("Kia", "Soul", 2022));
+            motos.Add(new Moto("Mortalica", "ft150", 2023));
+            motos.Add(new Moto("Yamaha", "R6", 2023));
             foreach (Auto auto in autos)
             {
                 comboBox1.Items.Add(auto.marca + " "+auto.modelo);
+            }
+            foreach (Moto auto in motos)
+            {
+                comboBox1.Items.Add(auto.marca + " " + auto.modelo);
             }
         }
     }
